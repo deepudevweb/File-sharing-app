@@ -20,6 +20,10 @@ function UploadForm() {
        setFile(file)
     }
 
+    const removeFile = () => {
+        setFile(null)
+    }
+
   return (
     <div className='text-center'>   
       
@@ -36,7 +40,7 @@ function UploadForm() {
     </label>
 </div> 
 {errorMsg?<Alertmsg msg={errorMsg} /> : null}
-{file? <FilePreview file={file} /> : null }
+{file? <FilePreview  removeFile={removeFile} file={file} /> : null }
 <button disabled={!file} className='p-2 text-white bg-primary w-[30%] m-5 rounded-full disabled:bg-gray-400'>Upload</button>
 
     </div>
